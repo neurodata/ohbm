@@ -79,6 +79,7 @@ Collect height data from {males, females} from a population
 
 - All nodes have a *latent position* in d-dimensional space
 - Probability of an edge between a pair of nodes is equal to the dot product of their latent positions
+- Each graph has a latent position matrix $(X_i \in \mathbb{R}^{n\times d})$.
 
 .footnote[[Athreya et al. (JMLR) 2018](http://jmlr.org/papers/v18/17-448.html)]
 
@@ -95,8 +96,8 @@ Collect height data from {males, females} from a population
 
 ### Common Subspace Independent Edge Graph (COSIE)
 
-- blah
-- blah
+- Common *latent position* matrix shared across all graphs $(V\in \mathbb{R}^{n\times d})$.
+- Individual graphs are transformation of the common matrix $(R_i \in \mathbb{R}^{d\times d})$.
 
 ---
 
@@ -123,6 +124,7 @@ Collect height data from {males, females} from a population
 ### HNU1 Dataset
 
 - dMRI processed via [ndmg](https://neurodata.io/ndmg/)
+- Connectomes generated via deterministic tractography
 - 30 subjects
 - scanned once every 5 days, 10 scans total
 
@@ -145,15 +147,6 @@ Tasks
 class: middle, inverse
 
 # .center[Live Demo!]
-
----
-
-### References
-
-1. Vogelstein JT, et al. [*Connectal Coding: Discovering the Structures Linking Cognitive Phenotypes to Individual
-Histories.*](https://github.com/neurodata/neurodata.io/raw/deploy/source/docs/Connectal_Coding.pdf) Current Opinion in
-Neurobiology, April 2019.
-2. Chung, J et al. [*GraSPy: Graph Statistics in Python.*](https://arxiv.org/abs/1904.05329) arXiv, 2019.
 
 ---
 ### Acknowledgements
@@ -226,6 +219,8 @@ Neurobiology, April 2019.
 ## NeuroData Workshop
 - August 19-23, 2019
 - Baltimore, MD USA
+
+[https://neurodata.devpost.com](https://neurodata.devpost.com)
 
 ---
 
