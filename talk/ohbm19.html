@@ -20,10 +20,12 @@ name:opening
 
 Jaewon Chung | Johns Hopkins University
 
+https://bit.ly/graphstat
+
 <img src="images/neurodata_purple.png" style="height:250px; float:right;"/>
 
 
-<br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
 
 <!--
 <img src="images/funding/jhu_bme_blue.png" STYLE="HEIGHT:95px;"/>
@@ -129,6 +131,7 @@ Collect height data of {males, females} from a population
 
 - dMRI processed via [ndmg](https://neurodata.io/ndmg/)
 - Connectomes generated via deterministic tractography
+- modified Desikan atlas (70 ROIs)
 - 30 subjects
 - scanned once every 5 days, 10 scans total
 
@@ -136,7 +139,7 @@ Collect height data of {males, females} from a population
 
 --
 
-Subsample 3 subjects (30 connectomes total)
+Subsample 4 subjects (40 connectomes total)
 
 --
 
@@ -144,13 +147,12 @@ Tasks
 
 1. Cluster
 2. Classify
-3. Cluster vertices (community detection)
 
 ---
 
 class: middle, inverse
 
-# .center[Live Demo!]
+# .center[[Live Demo!](https://nbviewer.jupyter.org/github/neurodata/ohbm/blob/master/demo.ipynb)]
 
 ---
 ### Acknowledgements
@@ -220,6 +222,7 @@ class: middle, inverse
 </div>
 
 ---
+
 ## NeuroData Workshop
 - August 19-23, 2019
 - Baltimore, MD USA
@@ -250,6 +253,32 @@ Under RDPG or COSIE model, omni or mase, respectivly, will provide:
 2. normal limiting distribution of parameters (central limit theorem)
 
 .footnote[[Levin et al. (IEEE) 2017](https://ieeexplore.ieee.org/document/8215766)]
+
+---
+### Generative Model for RDPG
+
+Latent position matrix, $X \in \mathbb{R}^{n\times d}$
+
+Probability matrix, $P = XX^T$ and $P_{ij} \in [0, 1]$
+
+Sampled graph, $A_{ij} = \text{Bernoulli}$  $(P_ij)$
+
+- n = # of nodes
+- d = latent dimension
+
+---
+### Generative Model for COSIE
+
+Common latent position matrix, $V \in \mathbb{R}^{n\times d}$.
+
+Individual matrix, $R \in \mathbb{R}^{d\times d}$. 
+
+Probability matrix, $P = VRV^T$ and $P_{ij} \in [0, 1]$.
+
+Sampled graph, $A_{ij} = \text{Bernoulli}$ $(P_ij)$
+
+- n = # of nodes
+- d = latent dimension
 
 
 </textarea>
